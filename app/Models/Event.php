@@ -9,6 +9,7 @@ class Event extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    //protected $fillable = ['nombre', 'descripcion'];
 
     public function participants(){
         return $this->belongsToMany(Participant::class);
