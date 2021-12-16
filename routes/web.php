@@ -15,7 +15,7 @@ use App\Http\Controllers\mvc\EventController;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('/pages.home');
 });
 
 Route::get('/about', function () {
@@ -24,7 +24,8 @@ Route::get('/about', function () {
 
 //Route::get('/events', [EventController::class, 'index']);
 
-Route::resource('events', EventController::class);
+Route::resource('events', EventController::class)
+    ->middleware('auth');
 
 Route::get('/contact', function () {
     return view('pages.contact');
